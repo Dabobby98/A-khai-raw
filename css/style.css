@@ -779,9 +779,83 @@ body.loaded p {
 }
 
 .portfolio-items .single-item .popup:hover img {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Portfolio Overlay Styles */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.8)));
+    background: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.8));
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    z-index: 4;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+.portfolio-items .single-item .popup:hover .portfolio-overlay {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.overlay-content {
+    color: #ffffff;
+    text-align: left;
+}
+
+.overlay-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.overlay-caption {
+    font-size: 13px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 767px) {
+    .portfolio-overlay {
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.4);
+    }
+    .overlay-title {
+        font-size: 16px;
+    }
+    .overlay-caption {
+        font-size: 12px;
+    }
 }
 
 
